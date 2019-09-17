@@ -1,0 +1,30 @@
+<%= simple_form_for @play, local: true do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="card">
+    <h4 class="card-header bg-dark text-light">Impress the community, add your play</h4>
+    <div class="card-body">
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <%= f.label :game, 'Game:' %>&nbsp;
+        <%= f.select :game, ['League of Legends'] %>
+        <div class="field">
+          <%= f.input :clip, as: :file %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer ">
+      <ul class="list-group mb-2">
+        <small>
+          <li class="list-group-item">
+            Only mp4 clips are allowed
+          </li>
+          <li class="list-group-item"> Max clip size : 20 Mb</li>
+        </small>
+      </ul>
+      <div class="offset-5">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
