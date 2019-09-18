@@ -55,7 +55,6 @@ group :development, :test do
   # Use for fighting the N+1 problem in Ruby
   gem 'bullet'
   gem 'mailcatcher'
-  gem 'mail_form', '~> 1.8'
   gem 'dotenv-rails', groups: [:development, :test]
   gem 'simplecov', '~> 0.17.0'
 
