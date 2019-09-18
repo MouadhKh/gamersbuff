@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   #get "sessions/new" => 'sessions#new', :as => :new_session
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #
-  #get '*path' => redirect('/') TODO fix this ( changed because of video get request not firing up)
+  # All invalid routes will be redirected excepted active_storage queries
+  get '*all', to: 'application#index', constraints: lambda {|req|
+    req.path.exclude? 'rails/active_storage'
+  }
 end

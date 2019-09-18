@@ -1,5 +1,5 @@
 <%- if defined?(play) -%>
-  <div class="card  border-secondary col-sm-<%= local_assigns[:card_size] %> offset-1 mb-4" style="height: auto;min-width: 16rem;max-width:20rem;">
+  <div class="card  border-secondary mb-4" style="height: auto;min-width: 16rem;">
     <div class="card-img-top img-adjusted">
       <%= video_tag(url_for(play.clip), style: 'width:100%;', controls: true) if play.clip.attached? %>
     </div>

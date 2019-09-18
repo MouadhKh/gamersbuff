@@ -1,7 +1,8 @@
 <%# card_size controls the size , TODO optimize  %>
-<div class="row">
-  <%= render partial: 'layouts/play', locals: {play: @play, card_size: 12} %>
+<div class="row m-3">
+  <div class="offset-4">
+    <%= render partial: 'layouts/play', locals: {play: @play, card_size: 12} %>
+  </div>
 </div>
 
-<br>
 <%= link_to 'Back', plays_path %>
