@@ -61,7 +61,7 @@ group :development, :test do
 end
 group :production do
   # Use postgreSQL for heroku
-  gem 'pg', '>= 0.20.0'
+  gem 'pg', '~> 1.1', '>= 1.1.4'
   if Gem.win_platform?
     # Windows does not include zoneinfo files, so bundle thetzinfo-data gem
     gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
