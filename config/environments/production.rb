@@ -66,6 +66,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "event_tracker_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {:host => 'gamersbuff.herokuapp.com'}
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.gmail.com",
@@ -73,7 +74,7 @@ Rails.application.configure do
     :domain => "gmail.com",
     :user_name => "gam3rsbuff@gmail.com",
     :password => "1475963f16", #TODO change
-    :authentication => "plain"
+    :authentication => :plain
   }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
