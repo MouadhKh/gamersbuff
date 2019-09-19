@@ -56,6 +56,7 @@ group :development, :test do
   # Use for fighting the N+1 problem in Ruby
   gem 'bullet'
   gem 'mailcatcher'
+  gem "recaptcha", require: "recaptcha/rails", groups: [:development, :test, :production]
   gem 'dotenv-rails', groups: [:development, :test]
   gem 'simplecov', '~> 0.17.0'
 
@@ -68,6 +69,7 @@ group :production do
     gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
     # to avoid polling for changes
     gem 'wdm', '>= 0.1.0'
+
   end
 
   group :development do

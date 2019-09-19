@@ -9,10 +9,8 @@
       <%= f.label :message %>
       <%= f.text_area :message, rows: 7, cols: 50, required: true, class: "form-control",
                       placeholder: "Let us know your thoughts..." %></br>
-
-    <div class="hidden">
-      <%= f.label :nickname %>
-      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+    <div class="offset-5">
+      <%= recaptcha_tags %>
     </div>
     <div class="offset-10 mt-2">
       <%= f.submit 'Send', class: 'btn btn-primary ' %>
