@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root "plays#index"
   devise_for :users
-  get 'contact/index'
   resources :contact, only: [:index, :new, :create]
   #default_url_options :host => "localhost:3000" #TODO delete
   resources :plays do
