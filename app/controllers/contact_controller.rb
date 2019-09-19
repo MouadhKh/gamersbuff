@@ -6,8 +6,7 @@ class ContactController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
     @contact.request = request
-    byebug
-    respond_to do |format |
+    respond_to do |format|
 
       if @contact.deliver
         # re-initialize Home object for cleared form
