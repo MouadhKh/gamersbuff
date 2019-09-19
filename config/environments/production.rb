@@ -72,8 +72,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => "gmail.com",
-    :user_name => "gam3rsbuff@gmail.com",
-    :password => "1475963f16", #TODO change
+    user_name: ENV["GMAIL_EMAIL"],
+    password: ENV["GMAIL_PASSWORD"],
     :authentication => :plain
   }
   # Ignore bad email addresses and do not raise email delivery errors.
