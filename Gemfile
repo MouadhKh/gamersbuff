@@ -41,6 +41,8 @@ gem 'simple_form'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem "font-awesome-rails"
 gem 'devise'
+gem 'aws-sdk-s3', '~> 1.48'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -67,7 +69,6 @@ group :production do
     gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
     # to avoid polling for changes
     gem 'wdm', '>= 0.1.0'
-    gem 'aws-sdk-s3', '~> 1.48'
   end
 
   group :development do
