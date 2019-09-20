@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  game: MyString
+  title: Play of the week
+  game: League of Legends
   user: one
 
 two:
-  title: MyString
-  game: MyString
+  title: Insane Kassadin Gameplay
+  game: League of Legends
   user: two
