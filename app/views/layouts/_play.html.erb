@@ -13,7 +13,7 @@
       <div class="border border-top my-1"></div>
       <p class="card-text"><%= render partial: 'layouts/vote_area', locals: {play: play} %></p>
       <p class="card-text text-info">
-        <i><%= play.game %></i>
+        <i><%= image_tag("#{play.game}.png", height: 32, width: 32) %>&nbsp;<%= play.game %></i>
       </p>
 
       <p class="card-text text-success">

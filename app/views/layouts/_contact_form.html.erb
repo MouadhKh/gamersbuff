@@ -1,19 +1,31 @@
 <%= simple_form_for :contact, url: contact_index_path do |f| %>
   <div class="col-md-6 offset-4">
+
+    <% if @contact.errors.any? %>
+      <ul class="list-group" style="list-style-type: none;">
+        <li class="list-group-item active align-content-center"><i>Please correct the following error then proceed: </i></li>
+        <% @contact.errors.full_messages.each do |error| %>
+          <li class="list-group-item-danger"><%= error %></li>
+        <% end %>
+      </ul>
+      <br>
+    <% end %>
+
     <%= f.label :username %></br>
     <%= f.text_field :username, required: true, :value => current_user ? current_user.username : '', class: "form-control", readonly: current_user %></br>
-    <br>
-      <%= f.label :email %></br>
+    <%= f.label :email %></br>
     <%= f.text_field :email, required: true, :value => current_user ? current_user.email : '', class: "form-control", readonly: current_user %></br>
-    <br>
-      <%= f.label :message %>
-      <%= f.text_area :message, rows: 7, cols: 50, required: true, class: "form-control",
-                      placeholder: "Let us know your thoughts..." %></br>
-    <div class="offset-5">
-      <%= recaptcha_tags %>
-    </div>
-    <div class="offset-10 mt-2">
-      <%= f.submit 'Send', class: 'btn btn-primary ' %>
+    <%= f.label :message %>
+    <%= f.text_area :message, rows: 7, cols: 50, required: true, class: "form-control",
+                    placeholder: "Let us know your thoughts..." %></br>
+
+    <div class="form-row ">
+      <div class="col-sm-4">
+        <%= recaptcha_tags %>
+      </div>
+      <div class="col-sm-2 offset-4">
+        <%= f.submit 'Send', class: 'btn btn-primary' %>
+      </div>
     </div>
   </div>
 <% end %>

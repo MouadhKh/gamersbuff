@@ -1,3 +1,5 @@
+<% title "Member Profile - #{current_user.username}" %>
+
 <div class="text-left">
   <h2>My Profile</h2>
 
@@ -32,7 +34,8 @@
       </div>
     </div>
   <% end %>
-  <strong>Uploaded Plays:</strong><br>
+  <hr>
+  <strong class="mb-2">Uploaded Plays:</strong>
   <div class="card-deck">
     <%= render partial: 'layouts/play', collection: @user.plays.with_attached_clip.includes([:clip_attachment, :votes]) %><%# solve the n+1 query problem %>
   </div>

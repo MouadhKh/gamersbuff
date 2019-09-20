@@ -5,21 +5,21 @@ class ContactController < ApplicationController
 
 
   def create
-    @contact = Contact.new(params[:contact])
-    @contact.request = request
-    respond_to do |format|
+    if !verify_recaptcha(model: @contact)
+      redirect_to contact_index_path, alert: 'Please solve the captcha first'
+    else
 
-      if @contact.deliver
-        # re-initialize Home object for cleared form
-        if verify_recaptcha(model: @contact)
-          redirect_to root_path
+      @contact = Contact.new(params[:contact])
+      @contact.request = request
+      respond_to do |format|
+        if @contact.deliver
+          @contact = Contact.new
+          format.html {redirect_to root_path, notice: "Thank you for your message. We'll get back to you soon!"}
+        else
+          format.html {render :index, alert: "Something went wrong ! Message not sent "}
         end
-        @contact = Contact.new
-        format.html {redirect_to root_path, notice: "Thank you for your message. We'll get back to you soon!"}
-        #format.js   { flash.now[:success] = @message = "Thank you for your message. We'll get back to you soon!" }
-      else
-        format.html {redirect_to contact_index_path, alert: "Something went wrong ! Message not sent "}
       end
     end
   end
+
 end

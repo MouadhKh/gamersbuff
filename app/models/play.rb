@@ -14,7 +14,7 @@ class Play < ApplicationRecord
   has_one_attached :clip
   belongs_to :user
   has_many :votes, dependent: :destroy
-  validates :title, presence: true
+  validates :title, presence: true, length: {minimum: 4, maximum: 15}
   validate :correct_video_type
 
 

@@ -11,16 +11,13 @@
 
 <body>
 <div class="mb-0">
-
   <%= render 'layouts/header' %>
   <%= render 'layouts/jumbotron' %>
   <%= render 'layouts/alerts' %>
 </div>
 
 <div class="container mt-3">
-  <div class="col-sm-12">
-    <%= yield %>
-  </div>
+  <%= yield %>
 </div>
 <div class="clear"></div>
 <%= render 'layouts/footer' %>
