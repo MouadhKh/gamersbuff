@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-4">
     <% if !play.votes.empty? %>
-      <small style="color: #ec4067;font-weight:bold"> <%= pluralize(local_assigns[:play].votes.count, 'Vote') %></small>
+      <small style="color: #ec4067;font-weight:bold"> <%= pluralize(local_assigns[:play].votes.count, t('play.vote'), locale: I18n.locale) %></small>
     <% end %>
   </div>
   <div class="col-sm-2">

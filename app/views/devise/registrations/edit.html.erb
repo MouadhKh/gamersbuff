@@ -1,7 +1,7 @@
-<% title "Member Profile - #{current_user.username}" %>
+<% title "#{t('global.member_profile')} - #{current_user.username}" %>
 
 <div class="text-left">
-  <h2>My Profile</h2>
+  <h2><%= t('global.my_profile') %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
     <%= f.error_notification %>
@@ -11,31 +11,31 @@
       <%= f.input :email, required: true, autofocus: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <p><%= t('confirmation.waiting') %> <%= resource.unconfirmed_email %></p>
       <% end %>
 
       <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: t('edit_profile.blank'),
                   required: false,
                   input_html: {autocomplete: "new-password"} %>
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: {autocomplete: "new-password"} %>
       <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  hint: t('edit_profile.current_password'),
                   required: true,
                   input_html: {autocomplete: "current-password"} %>
     </div>
 
     <div class="form-actions mb-2">
       <div class="form-row">
-        <%= f.button :submit, "Update", class: 'btn btn-primary mr-2' %>
-        <p> <%= button_to "Remove my account", user_registration_path, class: 'btn btn-danger', data: {confirm: "We are sorry that you are leaving us ! Are you sure ? "}, method: :delete %></p>
+        <%= f.button :submit, t('global.update'), class: 'btn btn-primary mr-2' %>
+        <p> <%= button_to t('edit_profile.remove'), user_registration_path, class: 'btn btn-danger', data: {confirm: t('edit_profile.confirm')}, method: :delete %></p>
       </div>
     </div>
   <% end %>
   <hr>
-  <strong class="mb-2">Uploaded Plays:</strong>
+  <strong class="mb-2"><%= t('play.uploaded_plays') %></strong>
   <div class="card-deck">
     <%= render partial: 'layouts/play', collection: @user.plays.with_attached_clip.includes([:clip_attachment, :votes]) %><%# solve the n+1 query problem %>
   </div>

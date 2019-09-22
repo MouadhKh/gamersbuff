@@ -1,33 +1,67 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  global:
+    home: "Home"
+    contact: "Contact us"
+    add_play: "Add Play"
+    my_profile: "My Profile"
+    logout: "Logout"
+    login: "Login"
+    by: "By "
+    back: "Back"
+    required: " required"
+    member_profile: "Member Profile"
+    member_registration: "Member Registration"
+    update: "Update"
+    resend_unlock: "Resend unlock instructions"
+  contact:
+    errors_intro: "Please correct the following errors:"
+    msg_placeholder: "Let us know your thoughts..."
+    send: "Send"
+    message: "Message"
+  footer:
+    follow: "Follow us on Social Media"
+  jumbotron:
+    challenge: "Accept the challenge , join the competition"
+    signup: 'Sign up now!'
+  play:
+    impress: "Impress the community, add your play"
+    title: "Title"
+    game: "Game"
+    only_mp4: "Only mp4 files are allowed"
+    max_size: "Max clip size : 20 Mb"
+    clip:
+      must_mp4: "must be MP4."
+      too_large: "is too large."
+    vote: "Vote"
+    votes: "Votes"
+    destroyed: "Play was successfully destroyed."
+    uploaded_plays: "Your Plays:"
+  flash:
+    already_voted: "You can't vote for the same play more than once"
+    success: "Successfully voted for: "
+  confirmation:
+    resend: "Resend confirmation instructions"
+    waiting: "Currently waiting confirmation for:"
+  edit_profile:
+    blank: "leave it blank if you don't want to change it"
+    current_password: "we need your current password to confirm your changes"
+    remove: "Remove my account"
+    confirm: "We are sorry that you are leaving us ! Are you sure ? "
+  member_registration:
+    char_min: "characters minimum"
+    terms: "I agree to the terms and conditions"
+    confirm: "Register"
+  new_session:
+    welcome: "Welcome Buddy, Come in"
+  links:
+    join: "Join the squad"
+    forgot: "Forgot your password?"
+    confirmation: "Didn't receive confirmation instructions?"
+    unlock: "Didn't receive unlock instructions?"
+    sign_in_with: "Sign in with"
+  top_plays:
+    intro: "Here you see the most insane plays rated by our members"
+  activerecord:
+    attributes:
+      user:
+        username: "Username"

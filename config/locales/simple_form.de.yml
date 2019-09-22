@@ -1,0 +1,27 @@
+de:
+  simple_form:
+    yes: 'Ja'
+    no: 'Nein'
+    required:
+      text: 'Pflichtfeld'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Bitte überprüfen Sie die folgenden Probleme:"
+
+    labels:
+      defaults:
+        password: 'Passwort'
+        username: 'Benutzername'
+        password_confirmation: "Passwort Bestätigung"
+        remember_me: "Erinnere dich an mich"
+      user:
+        new:
+          email: 'E-mail'
+        edit:
+          email: 'E-mail.'
+      hints:
+        defaults:
+         

@@ -112,10 +112,12 @@ div#container {
   color: #445588;
 }
 
-.hidden {
-  display: none;
+#trash-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
 }
-
 
 
 

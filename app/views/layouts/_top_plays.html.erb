@@ -1,0 +1,27 @@
+<% if @top_plays.empty? %>
+  No Plays Yet, Wait for it ....
+<% else %>
+  <table class="table table-hover">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t('play.title') %></th>
+      <th scope="col"><%= t('play.game') %></th>
+      <th scope="col"><%= t('play.votes') %></th>
+      <th scope="col"><%= "Uploader" %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @top_plays.each_with_index do |play, index| %>
+      <tr>
+        <th scope="row" style="width:70px;"><%= index +1 %>&nbsp; <%= fa_icon('trophy', class: 'fa-2x') if index == 0 %>
+        </th>
+        <td><%= link_to play.title, play_path(play) %></td>
+        <td><%= image_tag "#{play.game}.png", size: 32 %>&nbsp;<%= play.game %></td>
+        <td><%= play.votes.size %></td>
+        <td><%= play.user.username %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -1,25 +1,36 @@
 <header>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <div class="collapse navbar-collapse" id="">
       <%= link_to 'GamersBuff', root_path, class: 'navbar-brand' %>
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <%= link_to 'Home', root_path, class: 'nav-link' %>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 py-0">
+        <li class="nav-item  text-nowrap active">
+          <%= link_to root_path, class: 'nav-link' do %>
+            <%= fa_icon("home") %>&nbsp;<%= t('global.home') %>
+          <% end %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Contact us', contact_index_path, class: 'nav-link' %>
+        <li class="nav-item text-nowrap">
+          <%= link_to top_plays_index_path, class: 'nav-link' do %>
+            <%= fa_icon('trophy') %> Top Plays
+          <% end %>
         </li>
-
+        <li class="nav-item text-nowrap">
+          <%= link_to contact_index_path, class: 'nav-link' do %>
+            <%= fa_icon("address-book") %>&nbsp;<%= t('global.contact') %>
+          <% end %>
+        </li>
+        <li class="nav-item" style="position:fixed;margin-left:85em;">
+          <%= render 'layouts/flags' %>
+        </li>
       </ul>
       <% if user_signed_in? %>
         &nbsp;
-        <%= button_to 'Add Play', new_play_path, :class => 'pull-right btn btn-outline-primary', :id => 'add_play', method: :get %>
+        <%= button_to t('global.add_play'), new_play_path, :class => 'pull-right btn btn-outline-primary', :id => 'add_play', method: :get %>
         &nbsp;
-        &nbsp;<%= button_to 'My Profile', edit_user_registration_url, :class => 'btn btn-info', :method => :get, :id => 'profile' %>
+        &nbsp;<%= button_to t('global.my_profile'), edit_user_registration_url, :class => 'btn btn-info', :method => :get, :id => 'profile' %>
         &nbsp;
-        <%= button_to 'Logout', destroy_user_session_path, :class => 'btn btn-warning', method: :delete, :id => 'logout' %>
+        <%= button_to t('global.logout'), destroy_user_session_path, :class => 'btn btn-warning', method: :delete, :id => 'logout' %>
       <% else %>
-        <%= button_to 'Login', new_user_session_path, :class => 'btn btn-primary', :method => :get, :id => 'login' %>
+        <%= button_to t('global.login'), new_user_session_path, :class => 'btn btn-primary', :method => :get, :id => 'login' %>
       <% end %>
     </div>
   </nav>

@@ -1,0 +1,66 @@
+de:
+  global:
+    home: "Startseite"
+    contact: "Uns kontaktieren"
+    add_play: "Play hinzufügen"
+    my_profile: "Mein Profil"
+    logout: "Abmelden"
+    login: "Anmelden"
+    by: "Von "
+    back: "Zurück"
+    required: "erforderlich"
+    member_profile: "Mitgliedsprofil"
+    update: "Aktualisieren"
+    member_registration: "Mitgliedsregistrierung"
+    resend_unlock: "Entsperranweisungen erneut senden"
+  contact:
+    errors_intro: "Bitte folgende Probleme korrigieren:"
+    msg_placeholder: "Teilen Sie uns Ihre Meinung mit..."
+    send: "Verschicken"
+    message: "Nachricht"
+  footer:
+    follow: "Folge uns auf Social Media"
+  jumbotron:
+    challenge: "Nimm die Herausforderung an, nimm am Wettbewerb teil"
+    signup: "Jetzt Anmelden!"
+  play:
+    impress: "Beeindruck die Community, füg dein Play hinzu"
+    game: "Spiel"
+    only_mp4: "Nur mp4 Dateien sind zugelassen"
+    max_size: "Max clip Größe : 20 Mb"
+    clip:
+      must_mp4: "muss MP4 sein."
+      too_large: "ist zu groß."
+    vote: "Stimme"
+    votes: "Stimmen"
+    destroyed: "Play wurde erfolgreich gelöscht"
+    uploaded_plays: "Ihre Plays:"
+  flash:
+    already_voted: "Sie können nicht mehr als einmal für dasselbe Spiel stimmen"
+    success: "Successfully voted for: "
+  confirmation:
+    resend: "Bestätigungsanweisungen erneut senden"
+    waiting: "Warten auf Bestätigung für: "
+  edit_profile:
+    blank: "Lassen Sie das Feld leer, wenn Sie es nicht ändern möchten"
+    current_password: "Wir benötigen Ihr aktuelles Passwort, um Ihre Änderungen zu bestätigen"
+    remove: "Konto entfernen"
+    confirm: "Es tut uns leid, dass Sie uns verlassen! Sind Sie sicher ?"
+  member_registration:
+    char_min: "Zeichen mindestens"
+    terms: "Ich stimme den AGB zu"
+    confirm: "Registrieren"
+  new_session:
+    welcome: "Willkommen Kumpel, komm rein"
+  links:
+    join: "Tritt dem Kader bei"
+    forgot: "Passwort vergessen?"
+    confirmation: "Sie haben keine Bestätigungsanweisungen erhalten?"
+    unlock: "Sie haben keine Anweisungen zum Entsperren erhalten?"
+    sign_in_with: "Anmelden mit"
+  top_plays:
+    intro: "Hier sehen Sie die verrücktesten Plays, die von unseren Mitgliedern bewertet wurden"
+  activerecord:
+    attributes:
+      user:
+        username: "Benutzername"

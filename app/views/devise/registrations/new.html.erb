@@ -1,5 +1,5 @@
-<% title "Member Registration" %>
-<h2>Registration</h2>
+<% title t('global.member_registration') %>
+<h2><%= t('global.member_registration') %></h2>
 
 <%= simple_form_for(:user, as: :user, url: user_registration_path) do |f| %>
   <%= f.error_notification %>
@@ -11,17 +11,17 @@
                 input_html: {autocomplete: "email"} %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} #{t('member_registration.char_min')}" if @minimum_password_length),
                 input_html: {autocomplete: "new-password"} %>
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: {autocomplete: "new-password"} %>
   </div>
   <%= f.check_box :terms, remote: true, id: 'accept_terms' %>
-  <%= f.label 'I agree to the terms and conditions' %>
+  <%= f.label t('member_registration.terms') %>
 
   <div class="form-actions">
-    <%= f.button :submit, "Confirm Registration", class: 'btn btn-success pull-right', :id => 'confirm_registration', :disabled => true %>
+    <%= f.button :submit, t('member_registration.confirm'), class: 'btn btn-success pull-right', :id => 'confirm_registration', :disabled => true %>
 
 <% end %>
 

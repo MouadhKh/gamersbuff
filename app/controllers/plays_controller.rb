@@ -4,7 +4,7 @@ class PlaysController < ApplicationController
   #Order the recent plays by created_at
   # Only recent plays (7 days ago) will be kept
   def index
-    @plays = Play.with_attached_clip.recent_plays.includes(:user, :clip_attachment, :votes).order(:created_at)
+    @plays = Play.with_attached_clip.recent_plays.includes(:user, :clip_attachment,:votes).order(:created_at)
   end
 
   # GET /plays/1
@@ -15,13 +15,6 @@ class PlaysController < ApplicationController
   # GET /plays/new
   def new
     @play = Play.new
-
-    #@play = current_user.plays.build(play_params)
-
-  end
-
-  # GET /plays/1/edit
-  def edit
   end
 
   # POST /plays
@@ -42,26 +35,12 @@ class PlaysController < ApplicationController
     end
   end
 
-  # PATCH/PUT /plays/1
-  # PATCH/PUT /plays/1.json
-  def update
-    respond_to do |format|
-      if @play.update(play_params)
-        format.html {redirect_to @play, notice: 'Play was successfully updated.'}
-        format.json {render :show, status: :ok, location: @play}
-      else
-        format.html {render :edit}
-        format.json {render json: @play.errors, status: :unprocessable_entity}
-      end
-    end
-  end
-
   # DELETE /plays/1
   # DELETE /plays/1.json
   def destroy
     @play.destroy
     respond_to do |format|
-      format.html {redirect_to plays_url, notice: 'Play was successfully destroyed.'}
+      format.html {redirect_to plays_url, notice: I18n.t('play.destroyed')}
       format.json {head :no_content}
     end
   end
