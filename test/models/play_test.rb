@@ -11,12 +11,12 @@ class PlayTest < ActiveSupport::TestCase
   test "should not save play because play required clip and user are missing" do
     @play.save
     assert_equal(@play.errors.full_messages.first, "User must exist")
-    assert_equal(@play.errors.full_messages.second, "Clip required.")
+    assert_equal(@play.errors.full_messages.second, "Clip  required")
   end
   test "should not save play because play required clip is missing" do
     @play.user = @user
     @play.save
-    assert_equal(@play.errors.full_messages.first, "Clip required.")
+    assert_equal(@play.errors.full_messages.first, "Clip  required")
   end
   test "play get attached to user" do
     assert_nil @play.user

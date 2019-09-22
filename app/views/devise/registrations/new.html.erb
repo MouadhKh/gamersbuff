@@ -2,8 +2,11 @@
 <h2><%= t('global.member_registration') %></h2>
 
 <%= simple_form_for(:user, as: :user, url: user_registration_path) do |f| %>
-  <%= f.error_notification %>
   <div class="form-inputs">
+    <%= f.error_notification %>
+    <div class="alert m-2">
+      <%= render 'devise/shared/error_messages' %>
+    </div>
     <%= f.input :username, required: true,
                 autofocus: true %>
     <%= f.input :email,

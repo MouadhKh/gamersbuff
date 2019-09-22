@@ -17,7 +17,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         }
       }
       assert_template 'devise/registrations/new'
-      assert_select 'div.alert-danger'
       assert_select 'input.is-invalid'
       assert_select 'form[action="/users"]'
     end

@@ -5,7 +5,7 @@ class VotesController < ApplicationController
     if already_voted?
       flash[:alert] = I18n.t("flash.already_voted")
     else
-      flash[:notice] = I18n.t('play.vote.success') + @play.title
+      flash[:notice] = I18n.t('flash.success') + @play.title
       @play.votes.create(user_id: current_user.id)
     end
     redirect_to root_path
