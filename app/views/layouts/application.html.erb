@@ -6,7 +6,7 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <title> GamersBuff - <%= content_for?(:title) ? yield(:title) : ' Show your Skills' %> </title>
+  <title> GamersBuff - <%= content_for?(:title) ? yield(:title) : t('global.show_skills') %> </title>
 </head>
 
 <body>

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
+
   def index
     flash.alert = 'No page found at that address'
     redirect_to root_path

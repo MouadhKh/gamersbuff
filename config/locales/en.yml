@@ -13,6 +13,7 @@ en:
     member_registration: "Member Registration"
     update: "Update"
     resend_unlock: "Resend unlock instructions"
+    show_skills: " Show your Skills "
   contact:
     errors_intro: "Please correct the following errors:"
     msg_placeholder: "Let us know your thoughts..."

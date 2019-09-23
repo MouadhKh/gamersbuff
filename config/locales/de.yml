@@ -13,6 +13,7 @@ de:
     update: "Aktualisieren"
     member_registration: "Mitgliedsregistrierung"
     resend_unlock: "Entsperranweisungen erneut senden"
+    show_skills: " Zeig dein Skills"
   contact:
     errors_intro: "Bitte folgende Probleme korrigieren:"
     msg_placeholder: "Teilen Sie uns Ihre Meinung mit..."
