@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby '2.5.5'
 
 # Bundle edge Rails instead: gem'rails', github:'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -39,7 +38,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
+gem 'simple_form'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem "font-awesome-rails"
+gem 'devise'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -53,6 +55,11 @@ group :development, :test do
   gem 'awesome_print'
   # Use for fighting the N+1 problem in Ruby
   gem 'bullet'
+  gem 'mailcatcher'
+  gem 'mail_form', '~> 1.8'
+  gem 'dotenv-rails', groups: [:development, :test]
+  gem 'simplecov', '~> 0.17.0'
+
 end
 group :production do
   # Use postgreSQL for heroku
@@ -84,9 +91,11 @@ group :production do
     # Annotate guard runs the annotate gem when needed
     gem 'guard-annotate', '~> 2.3', require: false
     # compare licenses against a user-defined whitelist, and giveyou an actionable exception report
+    gem 'license_finder', '~> 3.0', '>= 3.0.1', require: false
+    # Brakeman is an open source static analysis tool which checks Rails applications for security vulnerabilities.
     gem 'brakeman', require: false
-    gem 'license_finder', '~> 3.0', '>= 3.0.1', require: false # Brakeman is an open source static analysis tool which checks Rails applications for security vulnerabilities.
     # Guard::Brakeman automatically scans your Rails app for vulnerabilities using the Brakeman Scaner
+
     gem 'guard-brakeman', '~> 0.8.3', require: false
     # Better Errors replaces the standard Rails error page with a much better and more useful error page
     gem 'better_errors'
@@ -105,6 +114,7 @@ group :production do
 
   group :test do
     # Adds support for Capybara system testing and selenium driver
+    gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
     gem 'capybara', '>= 2.15'
     gem 'selenium-webdriver'
     # Easy installation and use of chromedriver to run system tests with Chrome

@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<%# card_size controls the size , TODO optimize  %>
+<div class="row">
+  <%= render partial: 'layouts/play', locals: {play: @play, card_size: 12} %>
+</div>
+
+<br>
+<%= link_to 'Back', plays_path %>

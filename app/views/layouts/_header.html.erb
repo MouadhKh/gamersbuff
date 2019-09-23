@@ -1,0 +1,26 @@
+<header>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <%= link_to 'GamersBuff', root_path, class: 'navbar-brand' %>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <%= link_to 'Home', root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Contact us', "#", class: 'nav-link' %>
+        </li>
+
+      </ul>
+      <% if user_signed_in? %>
+        &nbsp;
+        <%= button_to 'Add Play', new_play_path, :class => 'pull-right btn btn-outline-primary', :id => 'add_play', method: :get %>
+        &nbsp;
+        &nbsp;<%= button_to 'My Profile', edit_user_registration_url, :class => 'btn btn-info', :method => :get, :id => 'profile' %>
+        &nbsp;
+        <%= button_to 'Logout', destroy_user_session_path, :class => 'btn btn-warning', method: :delete, :id => 'logout' %>
+      <% else %>
+        <%= button_to 'Login', new_user_session_path, :class => 'btn btn-primary', :method => :get, :id => 'login' %>
+      <% end %>
+    </div>
+  </nav>
+</header>
