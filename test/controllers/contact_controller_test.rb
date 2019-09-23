@@ -18,7 +18,7 @@ class ContactControllerTest < ActionDispatch::IntegrationTest
   test "shouldn't deliver because validations aren't passed" do
     post contact_index_path, params: {contact: {username: "shrt", email: "test_user.user.de", message: "I m here to help finding some problems, just ignore me"}}
     assert 200
-    assert_select "ul#contact_form_errors"
+    assert_select "ul#form_errors"
     assert_empty ActionMailer::Base.deliveries
 
   end

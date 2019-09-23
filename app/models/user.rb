@@ -19,14 +19,14 @@
 
 class User < ApplicationRecord
   before_save {email.downcase!}
-  validates :username, presence: true, length: {minimum: 4, maximum: 15}
+  validates :username, length: {minimum: 4, maximum: 15}
   validates_uniqueness_of :username, case_sensitive: false
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  attr_accessor :terms
-  validates :email, presence: true, length: {maximum: 254}, format: {with: VALID_EMAIL_REGEX}
+
+  validates :email, length: {maximum: 254}, format: {with: VALID_EMAIL_REGEX}
   has_many :plays, dependent: :destroy
   has_many :votes, dependent: :destroy
-
+  attr_accessor :terms
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 end

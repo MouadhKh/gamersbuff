@@ -1,6 +1,7 @@
 <%- if defined?(play) -%>
   <div class="card  border-secondary mb-4" style="height: auto;min-width: 16rem;">
     <div class="card-img-top img-adjusted">
+      <%= render 'layouts/destroy_play', play: play %>
       <%= video_tag(url_for(play.clip), style: 'width:100%;', controls: true) if play.clip.attached? %>
     </div>
     <div class="card-body ">
@@ -17,7 +18,7 @@
       </p>
 
       <p class="card-text text-success">
-        <strong>By</strong>
+        <strong><%= t('global.by') %></strong>
         <%= play.user.try(:username) %> <!-- .try added so that username isn't nil in controller_test!-->
       </p>
     </div>

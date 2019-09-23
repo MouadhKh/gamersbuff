@@ -1,5 +1,5 @@
-    <div class="row mt-4">
-      <div class="card-deck">
-        <%= render partial: 'layouts/play', collection: @plays.sort_by {|p| !p.votes.size} %>
-      </div>
-    </div>
+<div class="row mt-4">
+  <div class="card-deck">
+    <%= render partial: 'layouts/play', collection: @plays.sort_by {|p| -1 * p.votes.size} %>
+  </div>
+</div>

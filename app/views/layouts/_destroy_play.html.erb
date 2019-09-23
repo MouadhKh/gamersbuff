@@ -1,0 +1,5 @@
+<% if (current_user == play.user && play.votes.size < 100) || current_user && current_user.admin %>
+  <%= link_to play_path(play), method: :delete, data: {confirm: "Are you sure ?"}, class: "pull-right", style: "z-index: 1;" do %>
+    <%= image_tag "delete32.png", id: "trash-icon" %>
+  <% end %>
+<% end %>

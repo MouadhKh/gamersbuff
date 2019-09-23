@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#Problems caused after I18n : locale <= id & id= nil => thats why i m giving id manually id: value
 class PlaysControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = User.new username: 'test_user', email: 'user@example.com',
@@ -30,16 +30,16 @@ class PlaysControllerTest < ActionDispatch::IntegrationTest
 
   test "should show play" do
     @play.save
-    get play_url(@play)
-    assert_response :success
+    get play_path(id: @play.id)
+    assert :success
   end
 
   test "should destroy play" do
     @play.save
     assert_difference('Play.count', -1) do
-      delete play_url(@play)
+      delete play_path(id: @play.id)
     end
 
-    assert_redirected_to plays_url
+    assert_redirected_to plays_path
   end
 end

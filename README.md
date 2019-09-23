@@ -1,24 +1,35 @@
-# README
+##Webentwicklung Project of Mouadh Khlifi:
+# Project name: Gamersbuff
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
+To get started with the app, clone the repo and go the "gamerbufff" folder
 
-Things you may want to cover:
+# Git Repository:
+"https://github.com/MouadhKh/gamersbuff.git"
 
-* Ruby version
+#then install the needed gems:
 
-* System dependencies
+$ bundle install 
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+$ rails db:migrate
 
-* Database initialization
+Finally, run the test suite to verify that everything
+is working correctly:
 
-* How to run the test suite
+$ rails test
 
-* Services (job queues, cache servers, search engines, etc.)
+If the test suite passes, you'll be ready to run the
+app in a local server(See Required Configuration):
 
-* Deployment instructions
+#  Run:
+$ rails s
 
-* ...
+#Required Configuration
+Use Google reCAPTCHA keys in initializers/recaptcha.rb
+- Production:<br>
+    Configure mailer in production.rb
+    Configure AWS S3 in production.rb & storage.yml
+
+# Project deployed to heroku : www.gamersbuff.com

@@ -9,6 +9,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get new_user_registration_path
     assert_no_difference 'User.count' do
       post user_registration_path, params: {
+        locale: I18n.locale,
         user: {
           username: "",
           email: "user@test.de",
@@ -17,9 +18,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         }
       }
       assert_template 'devise/registrations/new'
-      assert_select 'div.alert-danger'
-      assert_select 'input.is-invalid'
-      assert_select 'form[action="/users"]'
+      assert_select "ul#form_errors"
     end
   end
   test "valid signup information with account activation" do

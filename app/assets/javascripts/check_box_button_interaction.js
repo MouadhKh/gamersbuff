@@ -1,5 +1,5 @@
 //Regitration_CheckBox
-$(document).ready(function () {
+document.addEventListener("turbolinks:load", function () {
   $("#accept_terms").click(function () {
     var isDisabled = $("#accept_terms").prop('checked');
     if (isDisabled) {

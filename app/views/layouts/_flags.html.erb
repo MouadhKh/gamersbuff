@@ -1,0 +1,14 @@
+<!--TODO maybe : don't redirect to root_path but current_page!-->
+<ul class="list-group list-group-horizontal-sm">
+  <li class="list-group-item py-1">
+    <%= link_to root_path(locale: :en) do %>
+      <%= image_tag "en.png" %>
+    <% end %>
+  </li>
+  <li class="list-group-item py-1">
+    <%= link_to root_path(locale: :de) do %>
+      <%= image_tag "de.png" %>
+    <% end %>
+  </li>
+</ul>
+

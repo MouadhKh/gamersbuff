@@ -2,8 +2,8 @@
   <div class="jumbotron mb-0">
     <div class="container-fluid align-content-center">
       <h1>GamersBuff</h1>
-      <p>Accept the challenge , join the competition</p>
-      <%= link_to 'Sign up now!', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
+      <p><%= t('jumbotron.challenge') %></p>
+      <%= link_to t('jumbotron.signup'), new_user_registration_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
 <% end %>
