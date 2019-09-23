@@ -6,9 +6,9 @@
 To get started with the app, clone the repo and go the "gamerbufff" folder
 
 # Git Repository:
-"https://github.com/MouadhKh/gamersbuff.git"
+https://github.com/MouadhKh/gamersbuff.git
 
-#then install the needed gems:
+then install the needed gems:
 
 $ bundle install 
 
