@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Play of the week
+  game: League of Legends
+  user: one
+
+two:
+  title: Insane Kassadin Gameplay
+  game: League of Legends
+  user: two

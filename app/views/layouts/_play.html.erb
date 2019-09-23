@@ -1,0 +1,31 @@
+<%- if defined?(play) -%>
+  <div class="card  border-secondary mb-4" style="height: auto;min-width: 16rem;">
+    <div class="card-img-top img-adjusted">
+      <%= video_tag(url_for(play.clip), style: 'width:100%;', controls: true) if play.clip.attached? %>
+    </div>
+    <div class="card-body ">
+      <h4 class="card-title">
+        <%= link_to play.title, play_url(play) %>
+        <% if play.is_new? %>
+          <span class="badge badge-danger"> New </span>
+        <% end %>
+      </h4>
+      <div class="border border-top my-1"></div>
+      <p class="card-text"><%= render partial: 'layouts/vote_area', locals: {play: play} %></p>
+      <p class="card-text text-info">
+        <i><%= image_tag("#{play.game}.png", height: 32, width: 32) %>&nbsp;<%= play.game %></i>
+      </p>
+
+      <p class="card-text text-success">
+        <strong>By</strong>
+        <%= play.user.try(:username) %> <!-- .try added so that username isn't nil in controller_test!-->
+      </p>
+    </div>
+    <div class="card-footer text-center">
+      <%= fa_icon("upload", class: "upload-icon") %>
+      <small class="text-muted"><%= play.created_at.strftime("%d-%m-%Y") %></small>
+    </div>
+
+  </div>
+
+<% end %>

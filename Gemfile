@@ -1,23 +1,20 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby '2.5.5'
 
 # Bundle edge Rails instead: gem'rails', github:'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem'mini_racer', platforms: :ruby
-
+#Used for contact form
+gem 'mail_form'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster.Read more: https://github.com/turbolinks/turbolinks
@@ -39,7 +36,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
+gem 'simple_form'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem "font-awesome-rails"
+gem 'devise'
+gem 'aws-sdk-s3', '~> 1.48'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -53,21 +55,26 @@ group :development, :test do
   gem 'awesome_print'
   # Use for fighting the N+1 problem in Ruby
   gem 'bullet'
+  gem 'mailcatcher'
+  gem "recaptcha", require: "recaptcha/rails", groups: [:development, :test, :production]
+  gem 'dotenv-rails', groups: [:development, :test]
+  gem 'simplecov', '~> 0.17.0'
+
 end
 group :production do
   # Use postgreSQL for heroku
-  gem 'pg', '>= 0.20.0'
+  gem 'pg', '~> 1.1', '>= 1.1.4'
   if Gem.win_platform?
     # Windows does not include zoneinfo files, so bundle thetzinfo-data gem
     gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
     # to avoid polling for changes
     gem 'wdm', '>= 0.1.0'
+
   end
 
   group :development do
     # Access an interactive console on exception pages or by calling'console'anywhere in the code.
     gem 'listen', '>= 3.0.5', '< 3.2'
-    gem 'web-console', '>= 3.3.0'
     # Spring speeds up development by keeping your application running in the background.Read more: https://github.com/rails/spring
     gem 'spring'
     gem 'spring-watcher-listen', '~> 2.0.0'
@@ -84,9 +91,11 @@ group :production do
     # Annotate guard runs the annotate gem when needed
     gem 'guard-annotate', '~> 2.3', require: false
     # compare licenses against a user-defined whitelist, and giveyou an actionable exception report
+    gem 'license_finder', '~> 3.0', '>= 3.0.1', require: false
+    # Brakeman is an open source static analysis tool which checks Rails applications for security vulnerabilities.
     gem 'brakeman', require: false
-    gem 'license_finder', '~> 3.0', '>= 3.0.1', require: false # Brakeman is an open source static analysis tool which checks Rails applications for security vulnerabilities.
     # Guard::Brakeman automatically scans your Rails app for vulnerabilities using the Brakeman Scaner
+
     gem 'guard-brakeman', '~> 0.8.3', require: false
     # Better Errors replaces the standard Rails error page with a much better and more useful error page
     gem 'better_errors'
@@ -105,6 +114,7 @@ group :production do
 
   group :test do
     # Adds support for Capybara system testing and selenium driver
+    gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
     gem 'capybara', '>= 2.15'
     gem 'selenium-webdriver'
     # Easy installation and use of chromedriver to run system tests with Chrome

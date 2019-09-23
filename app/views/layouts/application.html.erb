@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EventTracker</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <meta content="text/html" charset="UTF-8" http-equiv="Content-Type">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <title> GamersBuff - <%= content_for?(:title) ? yield(:title) : ' Show your Skills' %> </title>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body>
+<div class="mb-0">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/jumbotron' %>
+  <%= render 'layouts/alerts' %>
+</div>
 
-  <body>
-    <%= yield %>
-  </body>
+<div class="container mt-3">
+  <%= yield %>
+</div>
+<div class="clear"></div>
+<%= render 'layouts/footer' %>
+
+</body>
 </html>

@@ -17,3 +17,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require 'check_box_button_interaction'
+$('#vote-link').click(function(e){
+  e.preventDefault();
+});
