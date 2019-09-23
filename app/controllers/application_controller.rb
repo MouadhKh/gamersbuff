@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
-
+  before_action :expire_hsts
 
   def index
     flash.alert = 'No page found at that address'
@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = extract_locale || I18n.default_locale
+  end
+
+  def expire_hsts
+    response.headers["Strict-Transport-Security"] = 'max-age=0'
   end
 
   def extract_locale
