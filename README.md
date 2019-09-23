@@ -47,5 +47,6 @@ $ rails s
 - Implement a mechanism to make a Username verification to make sure the uploaded plays belongs to the uploader and aren't just stolen from somewhere in the internet
 - Support more games : in index add Search Filter like "Filter by game , by votes number , by uploader...)
 - Optimize Navigation 
+- Add will_paginate in index
 
 
