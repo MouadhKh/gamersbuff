@@ -1,5 +1,5 @@
 # Web Development Project of Mouadh Khlifi
-# Project name: Gamersbuff
+# Project name: GamersBuff
 # Project deployed to : www.gamersbuff.com
 
 ## Getting started
