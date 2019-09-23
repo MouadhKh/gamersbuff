@@ -1,7 +1,7 @@
 <%= simple_form_for :contact, url: contact_index_path do |f| %>
   <div class="col-md-6 offset-4">
-    <% if @contact.errors.any? %>
-      <ul id="contact_form_errors" class="list-group" style="list-style-type: none;">
+    <% if contact.errors.any? %>
+      <ul id="form_errors" class="list-group" style="list-style-type: none;">
         <li class="list-group-item active align-content-center mt-1"><i><%= t 'contact.errors_intro' %>
         </i></li>
         <% @contact.errors.full_messages.each do |error| %>

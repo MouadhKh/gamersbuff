@@ -14,6 +14,7 @@ en:
     update: "Update"
     resend_unlock: "Resend unlock instructions"
     show_skills: " Show your Skills "
+    change_password: "Change your password"
   contact:
     errors_intro: "Please correct the following errors:"
     msg_placeholder: "Let us know your thoughts..."
@@ -62,7 +63,7 @@ en:
     sign_in_with: "Sign in with"
   top_plays:
     intro: "Here you see the most insane plays rated by our members"
-  activerecord:
-    attributes:
-      user:
-        username: "Username"
+  password:
+    confirm: "Confirm your new password"
+    change: "Change my password"
+    reset: "Send me reset password instructions"

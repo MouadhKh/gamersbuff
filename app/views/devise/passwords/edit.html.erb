@@ -1,4 +1,4 @@
-<h2>Change your password</h2>
+<h2><%= t('global.change_password') %></h2>
 
 <%= simple_form_for(:user, as: :user, url: new_user_password_path, html: {method: :put}) do |f| %>
   <%= f.error_notification %>
@@ -11,13 +11,13 @@
                 label: "New password",
                 required: true,
                 autofocus: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} #{t('member_registration.char_min')}" if @minimum_password_length),
                 input_html: {autocomplete: "new-password"} %>
-    <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+    <%= f.input :password_confirmation, label: t('password.confirm'), required: true %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.button :submit, t('password.change') %>
   </div>
 <% end %>
 

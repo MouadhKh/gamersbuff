@@ -15,7 +15,7 @@ de:
       defaults:
         password: 'Passwort'
         username: 'Benutzername'
-        password_confirmation: "Passwort Bestätigung"
+        password_confirmation: "Passwort bestätigen"
         remember_me: "Erinnere dich an mich"
       user:
         new:

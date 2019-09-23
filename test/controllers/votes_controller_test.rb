@@ -20,7 +20,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     get root_path
     assert_select 'button#vote-btn'
-    post play_votes_path(@play, @user)
+    post play_votes_path(play_id: @play.id, user_id: @user.id)
     assert_redirected_to root_path
     assert_not_empty @play.votes
   end
@@ -29,10 +29,10 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     get root_path
     assert_select 'button#vote-btn'
-    post play_votes_path(@play, @user)
+    post play_votes_path(play_id: @play.id, user_id: @user.id)
     assert_redirected_to root_path
     assert_not_empty @play.votes
-    post play_votes_path(@play, @user)
+    post play_votes_path(play_id: @play.id, user_id: @user.id)
     get root_path
     assert_select 'p.alert-danger', html: 'You can\'t vote for the same play more than once' #TODO : will maybe change later when applying internationalization
   end

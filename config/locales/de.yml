@@ -14,6 +14,7 @@ de:
     member_registration: "Mitgliedsregistrierung"
     resend_unlock: "Entsperranweisungen erneut senden"
     show_skills: " Zeig dein Skills"
+    change_password: "Ändere dein Passwort"
   contact:
     errors_intro: "Bitte folgende Probleme korrigieren:"
     msg_placeholder: "Teilen Sie uns Ihre Meinung mit..."
@@ -61,7 +62,7 @@ de:
     sign_in_with: "Anmelden mit"
   top_plays:
     intro: "Hier sehen Sie die verrücktesten Plays, die von unseren Mitgliedern bewertet wurden"
-  activerecord:
-    attributes:
-      user:
-        username: "Benutzername"
+  password:
+    confirm: "Neues Passwort bestätigen"
+    change: "Mein Passwort ändern"
+    reset: "Senden Sie mir Anweisungen zum Zurücksetzen des Passworts"
